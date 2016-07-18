@@ -14,6 +14,6 @@ graphQLServer.use('/graphql', apolloServer({
   resolvers: Resolvers,
   context: Interface,
 }));
-graphQLServer.listen(GRAPHQL_PORT, () => console.log(
+graphQLServer.listen(process.env.PORT || GRAPHQL_PORT, () => console.log(
   `GraphQL Server is now running on http://localhost:${GRAPHQL_PORT}/graphql`
 ));
